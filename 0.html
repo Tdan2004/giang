@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Quản lý khách sạn</title>
+  </head>
+  <style>
+    
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+header img {
+  height: 50px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-left: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+section h2 {
+  margin-top: 0;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="date"],
+form input[type="datetime-local"],
+form select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+form button[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 0.5rem;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+table th {
+  background-color: #eee;
+}
+
+table td:last-child {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+footer {
+  background-color: #f2f2f2;
+  padding: 1rem;
+  text-align: center;
+}
+
+  </style>
+  <body>
+    <header>
+
+      <h1>Quản lý khách sạn</h1>
+      <nav>
+        <ul>
+          <li><a href="./1.html">Trang Chủ</a></li>
+          <li><a href="./0.5.html">Đăng Xuất</a></li>
+          <li><a href="https://www.facebook.com/janlion204">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="search">
+        <h2>Tìm kiếm khách sạn</h2>
+        <form action="search.php" method="get">
+          <label for="from">Điểm du lịch bạn đi:</label>
+          <input type="text" id="from" name="from">
+          <label for="to">Giá Phòng:</label>
+          <input type="text" id="to" name="to">
+          <label for="date">Ngày Đến:</label>
+          <input type="date" id="date" name="date">
+          <label for="passengers">Số Phòng:</label>
+          <input type="number" id="passengers" name="passengers">
+          <button type="submit">Tìm kiếm</button>
+        </form>
+      </section>
+      <section id="booking">
+        <h2>Quản lý đặt khách sạn</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Tên Khách Sạn</th>
+              <th>Giá Phòng</th>
+              <th>Khách Hàng</th>
+              <th>Thời Gian</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>StarCity Nha Trang Hotel</td>
+              <td>$200</td>
+              <td>Nguyễn Giang</td>
+              <td>00:00 - 23:00</td>
+              <td><a href="#">Sửa</a> | <a href="#">Hủy</a></td>
+            </tr>
+            <tr>
+              <td>Vesna Hotel</td>
+              <td>$150</td>
+              <td>Vũ Anh</td>
+              <td>14:00 - 16:00</td>
+              <td><a href="#">Sửa</a> | <a href="#">Hủy</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="payment">
+        <h2>Quản lý thanh toán</h2>
+        <form action="payment.php" method="post">
+          <label for="method">Phương thức thanh toán:</label>
+          <select id="method" name="method">
+            <option value="credit">Thẻ tín dụng</option>
+            <option value="paypal">PayPal</option>
+            <option value="cash">Tiền mặt</option>
+          </select>
+          <label for="amount">Số tiền thanh toán:</label>
+          <input type="number" id="amount" name="amount">
+          <label for="time">Thời gian thanh toán:</label>
+          <input type="datetime-local" id="time" name="time">
+          <button type="submit">Thanh toán</button>
+        </form>
+      </section>
+      <section id="tickets">
+        <h2>Quản lý phòng khách sạn</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>số phòng</th>
+              <th>Giá phòng</th>
+              <th>Hành khách</th>
+              <th>Thời gian thuê</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>107</td>
+              <td>$200</td>
+              <td>Nguyễn Giang</td>
+              <td>00:00 - 23:00</td>
+              <td><a href="#">Đã Nhận Phòng</a> | <a href="#">Chưa Nhận</a></td>
+            </tr>
+            <tr>
+              <td>108</td>
+              <td>$150</td>
+              <td>Vũ Anh</td>
+              <td>14:00 - 16:00</td>
+              <td><a href="#">Đã Nhận Phòng </a> | <a href="#">Chưa Nhận</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="account">
+        <h2>Quản lý tài khoản</h2>
+        <ul>
+          <li><strong>Họ và tên:</strong>  <input type="text" id="username" name="username"></li>
+          <li><strong>Email:</strong> giangnguyen27112k4@gmail.com</li>
+          <li><strong>Điện thoại:</strong> 0353397306</li>
+          <li><strong>Địa chỉ:</strong> Bắc Ninh, Việt Nam</li>
+          <li><strong>Lịch sử đặt vé:</strong> ABC123 (10:00 - 12:00), DEF456 (14:00 - 16:00)</li>
+          <li><strong>Lịch sử thanh toán:</strong> $100 (thẻ tín dụng, 10:30 01/01/2022), $150 (PayPal, 15:30 02/01/2022)</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

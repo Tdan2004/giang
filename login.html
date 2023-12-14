@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang web đăng nhập</title>
+    <!-- Liên kết Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<style>
+    /* Định dạng cho thẻ body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+  
+  /* Định dạng cho tiêu đề trang */
+  h3 {
+    color: #333333;
+    margin-bottom: 20px;
+  }
+  
+  /* Định dạng cho biểu mẫu đăng ký */
+  .registration-form {
+    width: 600px;
+    margin: 0 auto;
+    border: 1px solid #cccccc;
+    padding: 20px;
+    background-color: #ffffff;
+  }
+  
+  /* Định dạng cho bảng trong biểu mẫu */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Định dạng cho các ô trong bảng */
+  td {
+    padding: 10px;
+    vertical-align: top;
+  }
+  
+  /* Định dạng cho các nhãn trong bảng */
+  label {
+    font-weight: bold;
+  }
+  
+  /* Định dạng cho các trường nhập liệu trong bảng */
+  input, select, textarea {
+    width: 100%;
+    border: 1px solid #999999;
+    box-sizing: border-box;
+  }
+  
+  /* Định dạng cho nút gửi trong bảng */
+  .submit {
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  /* Định dạng cho chân trang */
+  footer {
+    margin-top: 20px;
+  }
+  
+</style>
+<body>
+    <!-- Thanh điều hướng -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.facebook.com/janlion204">Liên Hệ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./login.html">Đăng nhập</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./dki.html">Đăng ký</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Modal đăng nhập -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-center">Đăng nhập </h3>
+                <form name="registration" class="registration-form" action="./1.html" method="post">
+                    <table>
+                        <tr>
+                            <td><label for="name">Tên đăng nhập</label></td>
+                            <td><input type="text" name="name" id="name" placeholder="Tên của bạn" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="password">Mật khẩu:</label></td>
+                            <td><input type="password" name="password" id="password" placeholder="Mật khẩu của bạn" required></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="submit" class="submit" value="Đăng nhập" /></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Chân trang -->
+    <footer class="bg-light mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center py-3">
+                    <p class="mb-0">© 2023 Trang web thị trường cho các bài viết. Tất cả các quyền được bảo lưu.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Liên kết jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Liên kết Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Liên kết tệp JS tùy chỉnh -->
+    <script src="script.js"></script>
+</body>
+</html>

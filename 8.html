@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>Jan Hotel - Thuê Khách Sạn</title>
+</head>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+}
+
+main {
+    padding: 20px;
+}
+
+.booking-details {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.room-info {
+    padding: 20px;
+}
+
+.room-info h2 {
+    margin-top: 0;
+}
+
+.booking-form {
+    flex: 1;
+    padding: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4293d5;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a0a0;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+/* Thêm vào tệp styles.css */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+</style>
+<body>
+    <javacript>
+        <nav class="navbar bg-body-tertiary fixed-top">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="./1.html">Trang Chủ</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Jan Hotel</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="https://www.facebook.com/janlion204">Liên Hệ</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./0.5.html">Đăng Xuất</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Danh Sách
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="./2.html">Khách Sạn ở Bắc Ninh</a></li>
+                        <li><a class="dropdown-item" href="./3.html">Khách Sạn ở Nha Trang</a></li>
+                        <li><a class="dropdown-item" href="./4.html">Khách Sạn ở Phúc Quốc</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <form class="d-flex mt-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </javacript>
+        <div class="row">
+            <div class="col-md-6">
+                    <div id="carouselExampleCaptions" class="carousel slide">
+                                <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="./293867339.jpg" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                    <h5>First slide label</h5>
+                                    <p>Quay mặt ra bãi biển ở thành phố Nha Trang, Vesna Hotel cung cấp chỗ nghỉ 5 sao và có trung tâm thể dục, sảnh khách chung cũng như nhà hàng. Khách sạn 5 sao này có khu vực bãi biển riêng và dịch vụ phòng.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./293867593.jpg" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                    <h5>Second slide label</h5>
+                                    <p>Khách sạn cung cấp chỗ nghỉ 5 sao với hồ bơi trong nhà và bể sục. Khách nghỉ tại Vesna Hotel có thể tham gia các hoạt động trong và xung quanh thành phố Nha Trang, như đi xe đạp.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src=".//293867424.jpg" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                    <h5>Third slide label</h5>
+                                    <p>Bãi biển Nha Trang nằm cách chỗ nghỉ 1,1 km trong khi Tháp Trầm Hương cách đó 2 km. Sân bay gần nhất là sân bay quốc tế Cam Ranh, nằm trong bán kính 33 km từ Vesna Hotel.</p>
+                                    </div>
+                                </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-5"><br> 
+                            <section class="booking-details"><br>
+                              <div class="room-info"><br>
+                                  <h2>Vesna Hotel</h2><br>
+                                  <p>Diện Tích: 40m<sup>2</sup></p><br>
+                                  <p>Giá Phòng: $200/đêm</p><br>
+                              </div><br>
+                              <div class="booking-form"><br>
+                                  <label for="checkInDate">Ngày Nhận Phòng:</label><br>
+                                  <input type="date" id="checkInDate" name="checkInDate" required><br>
+
+                                  <label for="checkOutDate">Ngày Trả Phòng:</label><br>
+                                  <input type="date" id="checkOutDate" name="checkOutDate" required><br>
+
+                                  <label for="serviceFee">Phí Dịch Vụ:</label><br>
+                                  <input type="number" id="serviceFee" name="serviceFee" placeholder="Nhập phí dịch vụ" required><br>
+
+                                  <label for="additionalAmenities">Tiện Ích Phòng:</label><br>
+                                  <textarea id="additionalAmenities" name="additionalAmenities" placeholder="Ví dụ: Wi-Fi, TV, minibar" required></textarea>
+
+                                  <button class="book-button" onclick="confirmBooking()">Xác Nhận Thuê Phòng</button>
+                              </div>
+                          </section>
+
+                          <div id="confirmation-modal" class="modal">
+                              <div class="modal-content">
+                                  <span class="close" onclick="closeModal()">&times;</span>
+                                  <h2>Đặt Phòng Thành Công!</h2>
+                                  <p>Cảm ơn bạn đã đặt phòng. Thông tin chi tiết sẽ được gửi đến email của bạn.</p>
+                              </div>
+                          </div>
+                      </main>
+
+                      
+
+                      <script>
+                          function confirmBooking() {
+                              // Hiển thị modal khi nút được bấm
+                              var modal = document.getElementById('confirmation-modal');
+                              modal.style.display = 'block';
+                          }
+
+                          function closeModal() {
+                              // Đóng modal khi người dùng bấm vào nút đóng
+                              var modal = document.getElementById('confirmation-modal');
+                              modal.style.display = 'none';
+                          }
+                      </script>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2023 Khách Sạn Vesna Hotel. All rights reserved.</p>
+        </footer>
+        </div>
+        
+</body>

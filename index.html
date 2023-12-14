@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Đăng Nhập</title>
+</head>
+<style>
+    /* Thêm vào tệp styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+</style>
+<body>
+
+    <div class="login-container">
+        <h2>Đăng Nhập</h2>
+        
+        <form id="loginForm">
+            <label for="username">Tên Đăng Nhập:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Mật Khẩu:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="role">Vai Trò:</label>
+            <input type="radio" id="admin" name="role" value="admin" checked>
+            <label for="admin">Khách Hàng</label>
+
+            <input type="radio" id="employee" name="role" value="employee">
+            <label for="employee">Quản Lý</label>
+
+            <button type="button" onclick="login()">Đăng Nhập</button>
+        </form>
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var role;
+
+            // Xác định vai trò được chọn
+            if (document.getElementById('admin').checked) {
+                role = 'admin';
+            } else if (document.getElementById('employee').checked) {
+                role = 'employee';
+            }
+
+            // Kiểm tra thông tin đăng nhập và dẫn đến trang đúng
+            if (username && password && role) {
+                var redirectURL = '';
+
+                // Xác định URL đường dẫn dựa trên vai trò
+                if (role === 'admin') {
+                    redirectURL = '1.html';
+                } else if (role === 'employee') {
+                    redirectURL = '0.html';
+                }
+
+                // Chuyển hướng đến URL đường dẫn đúng
+                window.location.href = redirectURL;
+            } else {
+                alert('Vui lòng điền đầy đủ thông tin đăng nhập và chọn vai trò.');
+            }
+        }
+    </script>
+                <footer class="bg-light mt-4">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center py-3">
+                                <p class="mb-0">© 2023 Trang web đăng ký tài khoản thuê Hotel. Tất cả các quyền được bảo lưu bởi Jan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                <script src="script.js"></script>
+</body>
+</html>
